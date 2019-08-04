@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Parser_Implementation",
+            "request": "launch",
+            "mainClass": "Parser_Implementation",
+            "projectName": "Expression_Parser_62b08213"
+        }
+    ]
+}
