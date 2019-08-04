@@ -24,7 +24,13 @@ public class MDASParser
             rightSide.append(thisLevel, offSet, thisLevel.length - offSet);
             num2 = run_MD_parse(rightSide.toString());
 
-            return num1 * num2;
+            char op = thisLevel[index];
+            switch(op){
+                case '*':
+                    return num1 * num2;
+                case '@':
+                    return num1 / num2; //temporary division syntax until i find a non ilegal character
+            }
         }
         
         return Double.parseDouble(exp);
@@ -54,14 +60,20 @@ public class MDASParser
             //run same level on right side
             num2 = run_AS_parse(rsStr);
 
-            return num1 + num2;
+            char op = thisLevel[index];
+            switch(op){
+                case '+':
+                    return num1 + num2;
+                case '-':
+                    return num1 - num2;
+            }
         }
 
         return run_MD_parse(exp);
     }
 
     private static int find_MD_index(char[] exp){
-        return find(exp, '*', '@');
+        return find(exp, '*', '@'); //temp division syntax
     }
 
     private static int find_AS_index(char[] exp){
