@@ -28,7 +28,7 @@ public class MDASParser
             switch(op){
                 case '*':
                     return num1 * num2;
-                case '@':
+                case '/':
                     return num1 / num2; //temporary division syntax until i find a non ilegal character
             }
         }
@@ -73,7 +73,7 @@ public class MDASParser
     }
 
     private static int find_MD_index(char[] exp){
-        return find(exp, '*', '@'); //temp division syntax
+        return find(exp, '*', '/'); //temp division syntax
     }
 
     private static int find_AS_index(char[] exp){
